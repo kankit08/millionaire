@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import moneyPyramid from './dataMoney'
 
-function App() {
+const App = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+        <div className="main">main</div>
+        <div className="pyramid">
+            <ul className="moneylist">
+              {moneyPyramid.map((m) => (
+                <li className="moneyListItem">
+                  <span className='moneyListItemNumber'>{m.id}</span>
+                  <span className='moneyListItemAmount'>{m.amount}</span>
+                </li>
+                ))}
+            </ul>
+        </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
